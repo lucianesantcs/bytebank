@@ -7,11 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bytebank';
-  transferencia: any;
-  //transferencia: any = {}; //corrige erro value undefined 
-  //ou usa no html: {{ transferencia?.valor }}
+  transferenciaApp: any = []; // [] corrige erro value undefined
 
   transferir($event: any) {
-    this.transferencia = $event;
+    const transferencia = {...$event, data: new Date()}
+    this.transferenciaApp.push(transferencia); // envia um array ao invés de obj
   }
 }

@@ -14,7 +14,6 @@ export class NovaTransgerenciaComponent {
 
     constructor() {}
     
-    
     novaTransferencia() {
         this.aoTransferir.emit({
             valor: this.valor,
