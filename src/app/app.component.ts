@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TransferenciaService } from './services/transferencia.service';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bytebank';
-  transferenciaApp: any = []; // [] corrige erro value undefined
+
+  constructor(private transferenciaService: TransferenciaService) {}
 
   transferir($event: any) {
-    const transferencia = {...$event, data: new Date()}
-    this.transferenciaApp.push(transferencia); // envia um array ao invés de obj
+    this.transferenciaService.adicionar($event);
   }
 }
