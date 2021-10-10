@@ -14,7 +14,12 @@
   }
   
   .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 400px;
     padding: 30px;
     margin: 0 auto;
+    height: calc(100vh - 100px);
   }
